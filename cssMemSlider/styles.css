@@ -59,33 +59,27 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 1vw;
-    /* margin: 0 auto; */
     background-color: #24282b;
     padding: 1vw;
 }
 
 .slider {
     width: 100%;
-    /* aspect-ratio: 2/1; */
     overflow: hidden;
 }
-
 
 .images {
     display: flex;
     flex-direction: row;
     width: 500%;
-    /* aspect-ratio: 2/1; */
     transition: all 1s ease;
 }
 
 .slider-item {
     width: 20%;
     aspect-ratio: 7/5;
-    /* background-color: #71abff; */
     transition: all 1s ease;
 }
-
 
 .controls {
     display: flex;
@@ -109,13 +103,11 @@ body {
 }
 
 .descriptions div {
-    /* display: block; */
     width: 100%;
 }
 
 .labels {
     display: flex;
-    /* column-gap: 1vw; */
     flex-wrap: nowrap;
 }
 
@@ -132,7 +124,6 @@ body {
     border-radius: 50%;
     width: 1vw;
     height: 1vw;
-    /* transition: transform 0.2s; */
     pointer-events: auto;
     background-color: #71abff;
     border: solid 0.2vw #71abff;
@@ -140,17 +131,12 @@ body {
     margin: 0.5vw;
     cursor: pointer;
     transition: all 0.4s ease;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 }
 
 .labels label:hover {
     background-color: floralwhite;
     border-color: floralwhite;
 }
-
-
 
 #it1:checked ~ .slider .images {
     margin-left: 0;
@@ -168,7 +154,6 @@ body {
     margin-left: -400%;
 }
 
-
 #it1:checked ~ .controls .description .descriptions {
     margin-left: 0;
 }
@@ -184,7 +169,6 @@ body {
 #it5:checked ~ .controls .description .descriptions {
     margin-left: -400%;
 }
-
 
 #it1:checked ~ .controls .labels label:nth-child(1),
 #it2:checked ~ .controls .labels label:nth-child(2),
@@ -216,14 +200,7 @@ body {
     background-size: cover;
 }
 
-
-
 .radio {
-    /* height: 0px; */
-    /* width: 0px; */
-    /* position: absolute; */
-    /* left: 100px; */
-    /* visibility: hidden; */
     display: none;
 }
 
