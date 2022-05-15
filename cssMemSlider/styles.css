@@ -119,6 +119,13 @@ body {
     flex-wrap: nowrap;
 }
 
+.label {
+    width: 2.4vw;
+    height: 4vw;
+    margin-left: -1.2vw;
+    margin-top: -2vw;
+}
+
 .labels label {
     display: inline-block;
     box-sizing:border-box;
@@ -133,6 +140,9 @@ body {
     margin: 0.5vw;
     cursor: pointer;
     transition: all 0.4s ease;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
 
 .labels label:hover {
