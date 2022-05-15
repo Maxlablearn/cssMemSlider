@@ -1,0 +1,228 @@
+/* -----reset styles----- */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+ul[class], ol[class] {
+padding: 0;
+}
+
+body, h1, h2, h3, h4, p, ul/*[class]*/, ol[class], li,
+figure, figcaption, blockquote, dl, dd {
+margin: 0;
+}
+
+ul[class], ol[class] {
+list-style: none;
+}
+
+a:not([class]) {
+text-decoration-skip-ink: auto;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
+input, button, textarea, select {
+font: inherit;
+}
+/* -----reset styles----- */
+
+/* ubuntu-regular - latin_cyrillic */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('./assets/fonts/ubuntu-v20-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./assets/fonts/ubuntu-v20-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+body {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-color: floralwhite;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: aliceblue;
+    font-family: Ubuntu;
+}
+
+.slider-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vw;
+    background-color: #24282b;
+    padding: 1vw;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    width: 500%;
+    transition: all 1s ease;
+}
+
+.slider-item {
+    width: 20%;
+    aspect-ratio: 7/5;
+    transition: all 1s ease;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 1vw;
+}
+
+.description {
+    margin-top: 0.4vw;
+    overflow: hidden;
+    width: 100%;
+}
+
+.descriptions {
+    display: flex;
+    flex-direction: row;
+    width: 500%;
+    transition: all 1s ease;
+    font-size: 1.5vw;
+}
+
+.descriptions div {
+    width: 100%;
+}
+
+.labels {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.label {
+    width: 2.4vw;
+    height: 4vw;
+    margin-left: -1.2vw;
+    margin-top: -2vw;
+}
+
+.labels label {
+    display: inline-block;
+    box-sizing:border-box;
+    border-radius: 50%;
+    width: 1vw;
+    height: 1vw;
+    pointer-events: auto;
+    background-color: #71abff;
+    border: solid 0.2vw #71abff;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.labels label:hover {
+    background-color: floralwhite;
+    border-color: floralwhite;
+}
+
+#it1:checked ~ .slider .images {
+    margin-left: 0;
+}
+#it2:checked ~ .slider .images {
+    margin-left: -100%;
+}
+#it3:checked ~ .slider .images {
+    margin-left: -200%;
+}
+#it4:checked ~ .slider .images {
+    margin-left: -300%;
+}
+#it5:checked ~ .slider .images {
+    margin-left: -400%;
+}
+
+#it1:checked ~ .controls .description .descriptions {
+    margin-left: 0;
+}
+#it2:checked ~ .controls .description .descriptions {
+    margin-left: -100%;
+}
+#it3:checked ~ .controls .description .descriptions {
+    margin-left: -200%;
+}
+#it4:checked ~ .controls .description .descriptions {
+    margin-left: -300%;
+}
+#it5:checked ~ .controls .description .descriptions {
+    margin-left: -400%;
+}
+
+#it1:checked ~ .controls .labels label:nth-child(1),
+#it2:checked ~ .controls .labels label:nth-child(2),
+#it3:checked ~ .controls .labels label:nth-child(3),
+#it4:checked ~ .controls .labels label:nth-child(4),
+#it5:checked ~ .controls .labels label:nth-child(5) {
+    background-color: #24282b;
+}
+
+
+.images .slider-item:nth-child(1) {
+    background: url('./assets/images/im1.jpg') center no-repeat;
+    background-size: cover;
+}
+.images .slider-item:nth-child(2) {
+    background: url('./assets/images/im2.jpg') center no-repeat;
+    background-size: cover;
+}
+.images .slider-item:nth-child(3) {
+    background: url('./assets/images/im3.jpg') center no-repeat;
+    background-size: cover;
+}
+.images .slider-item:nth-child(4) {
+    background: url('./assets/images/im4.jpg') center no-repeat;
+    background-size: cover;
+}
+.images .slider-item:nth-child(5) {
+    background: url('./assets/images/im5.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.radio {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .slider-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .slider-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slider-container {
+        width: 100%;
+    }
+    .controls {
+        flex-direction: column-reverse;
+        column-gap: 1vw;
+        align-items: center;
+    }
+}
