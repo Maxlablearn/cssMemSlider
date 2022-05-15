@@ -32,62 +32,186 @@ font: inherit;
 }
 /* -----reset styles----- */
 
+/* ubuntu-regular - latin_cyrillic */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('./assets/fonts/ubuntu-v20-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./assets/fonts/ubuntu-v20-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
 body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background-color: red;
+    background-color: floralwhite;
     display:flex;
     justify-content:center;
     align-items:center;
     color: aliceblue;
+    font-family: Ubuntu;
 }
 
 .slider-container {
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     row-gap: 1vw;
     /* margin: 0 auto; */
     background-color: #24282b;
-    padding: 2vw;
+    padding: 1vw;
 
 }
+
+.slider {
+    width: 100%;
+    /* aspect-ratio: 2/1; */
+    overflow: hidden;
+
+}
+
 
 .images {
     display: flex;
     flex-direction: row;
-    overflow: hidden;
-    width: 100%;
-    aspect-ratio: 2/1;
+    width: 500%;
+    /* aspect-ratio: 2/1; */
+    transition: all 1s ease;
 
 }
 
 .slider-item {
-    width: 100%;
+    width: 20%;
     aspect-ratio: 2/1;
-    background-color: aliceblue;
+    /* background-color: #71abff; */
+    transition: all 1s ease;
+
 }
+
 
 .controls {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 1vw;
 }
+
+.description {
+    margin-top: 0.5vw;
+    overflow: hidden;
+    width: 100%;
+}
+
+.descriptions {
+    display: flex;
+    flex-direction: row;
+    width: 500%;
+    transition: all 1s ease;
+
+}
+
+.descriptions div {
+    /* display: block; */
+    width: 100%;
+}
+
+.labels {
+    display: flex;
+    /* column-gap: 1vw; */
+    flex-wrap: nowrap;
+}
+
+.labels label {
+    display: inline-block;
+    box-sizing:border-box;
+    border-radius: 50%;
+    width: 1vw;
+    height: 1vw;
+    /* transition: transform 0.2s; */
+    pointer-events: auto;
+    background-color: #71abff;
+    border: solid 0.3vw #71abff;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.labels label:hover {
+    background-color: floralwhite;
+    border-color: floralwhite;
+}
+
+
+
+#it1:checked ~ .slider .images {
+    margin-left: 0;
+}
+#it2:checked ~ .slider .images {
+    margin-left: -100%;
+}
+#it3:checked ~ .slider .images {
+    margin-left: -200%;
+}
+#it4:checked ~ .slider .images {
+    margin-left: -300%;
+}
+#it5:checked ~ .slider .images {
+    margin-left: -400%;
+}
+
+
+#it1:checked ~ .controls .description .descriptions {
+    margin-left: 0;
+}
+#it2:checked ~ .controls .description .descriptions {
+    margin-left: -100%;
+}
+#it3:checked ~ .controls .description .descriptions {
+    margin-left: -200%;
+}
+#it4:checked ~ .controls .description .descriptions {
+    margin-left: -300%;
+}
+#it5:checked ~ .controls .description .descriptions {
+    margin-left: -400%;
+}
+
+
+#it1:checked ~ .labels label:nth-child(1),
+#it2:checked ~ .labels label:nth-child(2),
+#it3:checked ~ .labels label:nth-child(3),
+#it4:checked ~ .labels label:nth-child(4),
+#it5:checked ~ .labels label:nth-child(5) {
+    background-color: red;
+}
+
+
+.images .slider-item:nth-child(1) {
+    background-color: #ff71f8;
+}
+.images .slider-item:nth-child(2) {
+    background-color: #71ffb1;
+}
+.images .slider-item:nth-child(3) {
+    background-color: #71abff;
+}
+.images .slider-item:nth-child(4) {
+    background-color: #eaff71;
+}
+.images .slider-item:nth-child(5) {
+    background-color: #ff7a71;
+}
+
+
 
 .radio {
-    display: flex;
-    column-gap: 0.5vw;
-
-}
-
-.radio a{
-    display: inline-block;
-    border-radius: 50%;
-    width: 2vw;
-    aspect-ratio: 1/1;
-    transition: transform 0.2s;
-    pointer-events: auto;
-    background-color: aliceblue;
-    padding: 1vw;
+    /* height: 0px; */
+    /* width: 0px; */
+    /* position: absolute; */
+    /* left: 100px; */
+    /* visibility: hidden; */
+    display: none;
 }
